@@ -1,9 +1,6 @@
 {
   "name": "overreacted",
   "private": true,
-  "engines": {
-    "node": "12.x || 14.x"
-  },
   "description": "Overreacted",
   "version": "1.0.0",
   "author": "Dan Abramov <dan.abramov@me.com>",
@@ -53,33 +50,10 @@
   "homepage": "https://overreacted.io",
   "license": "MIT",
   "scripts": {
-    "dev": "gatsby develop",
-    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
-    "format": "prettier --write '{gatsby-*.js,src/**/*.{js,jsx,json,css}}'",
     "develop": "gatsby develop",
-    "start": "npm run develop",
-    "build": "rm -rf public && rm -rf .cache && gatsby build",
-    "now-build": "gatsby build",
-    "deploy": "yarn build && cp now.json public/ && cd public && now alias $(now) overreacted.io",
-    "dry": "yarn build && cp now.json public/ && cd public && now",
-    "js-to-jsx": "node src/utils/js-to-jsx"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "{gatsby-*.js,src/**/*.{js,jsx,json,css}}": [
-      "yarn format",
-      "git add"
-    ],
-    "src/pages/**/*.md": [
-      "yarn run js-to-jsx",
-      "git add"
-    ]
-  },
-  "resolutions": {
-    "**/sharp": "^0.23"
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
   }
 }
