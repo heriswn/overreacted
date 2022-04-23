@@ -73,6 +73,7 @@ yarn-error.log
 .idea
 
 # github
+.github/
 .github
 
 # pages
